@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^demo\.collaboratis\.com$
+RewriteRule ^/?$ "https\:\/\/demo\.collaboratis\.com\/connexion" [R=301,L]
+
