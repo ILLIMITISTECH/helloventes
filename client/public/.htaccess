@@ -1,0 +1,69 @@
+
+RewriteOptions inherit
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+RewriteCond %{HTTP_HOST} ^collaboratis\.optievent\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.collaboratis\.optievent\.com$
+RewriteRule ^/?$ "http\:\/\/collaboratis\.com" [R=301,L]
+RewriteCond %{HTTP_HOST} ^demo\-collaboratis\.optievent\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.demo\-collaboratis\.optievent\.com$
+RewriteRule ^/?$ "https\:\/\/demo\-collaboratis\.optievent\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^illimitis\.collaboratis\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.illimitis\.collaboratis\.com$
+RewriteRule ^/?$ "https\:\/\/illimitis\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^acame\-demo\.collaboratis\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.acame\-demo\.collaboratis\.com$
+RewriteRule ^/?$ "https\:\/\/acame\-demo\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^newversioncollaboratis\.collaboratis\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.newversioncollaboratis\.collaboratis\.com$
+RewriteRule ^/?$ "https\:\/\/newversioncollaboratis\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^feedback\.collaboratis\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.feedback\.collaboratis\.com$
+RewriteRule ^/?$ "https\:\/\/feedback\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^dev\.collaboratis\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.dev\.collaboratis\.com$
+RewriteRule ^/?$ "https\:\/\/dev\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^dev\-collaboratis\.optievent\.xyz$
+RewriteRule ^/?$ "http\:\/\/dev\-collaboratis\.optievent\.xyz\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^demo\.collaboratis\.com$
+RewriteRule ^/?$ "http\:\/\/demo\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^sortie\-terrain\.collaboratis\.com$
+RewriteRule ^/?$ "http\:\/\/sortie\-terrain\.collaboratis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^dev\.koyalis\.com$
+RewriteRule ^/?$ "http\:\/\/dev\.koyalis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^illimitis\.koyalis\.com$
+RewriteRule ^/?$ "http\:\/\/illimitis\.koyalis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^illimitis2\.koyalis\.com$
+RewriteRule ^/?$ "http\:\/\/illimitis2\.koyalis\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^v2\.helloventes\.com$
+RewriteRule ^/?$ "https\:\/\/v2\.helloventes\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^dev\-v1v2\.helloventes\.com$
+RewriteRule ^/?$ "https\:\/\/dev\-v1v2\.helloventes\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^illimitis\.helloventes\.com$
+RewriteRule ^/?$ "https\:\/\/illimitis\.helloventes\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^tamtam\.helloventes\.com$
+RewriteRule ^/?$ "https\:\/\/tamtam\.helloventes\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^new\-version\.helloventes\.com$
+RewriteRule ^/?$ "http\:\/\/new\-version\.helloventes\.com\/connexion" [R=301,L]
+RewriteCond %{HTTP_HOST} ^client\.helloventes\.com$
+RewriteRule ^/?$ "https\:\/\/client\.helloventes\.com\/connexion" [R=301,L]
+
